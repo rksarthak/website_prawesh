@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Message Received</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+  <section class="confirmation-section">
+    <div class="container">
+      <h2>Thanks, {{ name }}!</h2>
+      <p>We’ve received your message:</p>
+      <blockquote>{{ message }}</blockquote>
+      <p>We’ll reach out to you at <strong>{{ phone }}</strong> soon.</p>
+      <a href="/">← Back to Home</a>
+    </div>
+  </section>
+</body>
+</html>
