@@ -188,3 +188,40 @@ h2 {
     text-align: center;
   }
 }
+
+
+
+.calendly-inline-widget {
+  height: 500px !important;
+}
+
+@media (max-width: 768px) {
+  .calendly-inline-widget {
+    height: 400px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendly-inline-widget {
+    height: 350px !important;
+  }
+}
+
+
+.booking-section {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.image-section {
+  text-align: center; /* Centers inline elements like images */
+  padding :0 ;    /* Optional: adds vertical spacing */
+  background-color: #edf2f4;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block; /* Works with text-align: center */
+  border-radius: 12px;
+}
