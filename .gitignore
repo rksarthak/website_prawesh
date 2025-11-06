@@ -1,3 +1,6 @@
 .env
 .venv
 .DS_STORE
+
+static/images/Logos/fire_logo.jpeg
+static/images/Logos/all_around_main.jpeg

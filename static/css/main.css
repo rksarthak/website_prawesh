@@ -27,10 +27,30 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* Language toggle */
+
+.top-header {
+  background-color: var(--light-bg);
+  padding: 0 0;
+  border-bottom: 1px light #ccc;
+}
+
+.top-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-box {
+  flex-shrink: 0;
+}
+
+top-logo {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
 .language-toggle {
-  text-align: right;
-  padding: 1rem;
   font-size: 0.95rem;
 }
 
@@ -43,6 +63,7 @@ h2 {
 .language-toggle a:hover {
   text-decoration: underline;
 }
+
 
 /* Intro section */
 .intro-section {
@@ -224,4 +245,24 @@ h2 {
   height: auto;
   display: inline-block; /* Works with text-align: center */
   border-radius: 12px;
+}
+
+.logo-section {
+  background-color: var(--light-bg);
+  padding: 0rem 0rem;
+  text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  max-height: 80px; /* Prevents it from getting too large on big screens */
+  width: auto;
+  object-fit: contain;
 }
