@@ -262,7 +262,8 @@ top-logo {
 }
 
 .footer-logo {
-  max-height: 80px; /* Prevents it from getting too large on big screens */
+  max-height: 100px; /* Prevents it from getting too large on big screens */
   width: auto;
   object-fit: contain;
+  background: none;
 }
