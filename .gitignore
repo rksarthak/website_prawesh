@@ -4,3 +4,6 @@
 
 static/images/Logos/fire_logo.jpeg
 static/images/Logos/all_around_main.jpeg
+**/**.DS_Store
+static/images/.DS_Store
+static/.DS_Store
