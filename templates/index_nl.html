@@ -13,18 +13,38 @@
 <!-- Top Header Section -->
 <header class="top-header">
   <div class="container top-header-container">
+
+  <div class="navbar" id ="navbar" >
+    <div class="menu-icon" onclick="toggleMenu()" id="menuIcon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+ <div class="menu-overlay" id="menu">
+    <a href="#about">Over Mij</a>
+    <a href="#review">Beoordelingen</a>
+    <a href="#schedule">Plan een Gesprek</a>
+    <a href="#contact">Neem Contact Op</a>
+  </div>
+
     <div class="logo-box">
-      <img src="{{ url_for('static', filename='images/Logos/fire_logo.svg') }}" alt="Site Logo" class="top-logo">
+      <img src="{{ url_for('static', filename='images/Logos/fire_logo_name.png') }}" alt="Site Logo" class="top-logo">
     </div>
     <div class="language-toggle">
-      <a href="/?lang=en">🇬🇧 English</a> | <a href="/?lang=nl">🇳🇱 Nederlands</a>
+      <div class="language_english">
+        <a href="/?lang=en">🇬🇧 English</a>
+      </div>
+      <div class="language_Ducth">
+        <a href="/?lang=nl">🇳🇱 Nederlands</a>
+      </div>
     </div>
   </div>
 </header>
 
-
 <!-- Introductie -->
-<section class="intro-section">
+<section id="about" class="intro-section">
   <div class="container intro-flex">
     <div class="photo-box">
       <img src="{{ url_for('static', filename='images/prawesh.jpeg') }}" alt="Jouw foto" class="profile-photo">
@@ -39,7 +59,7 @@
 </section>
 
 <!-- Testimonials -->
-<section class="testimonials-section">
+<section id="review" class="testimonials-section">
   <div class="container">
     <h2>Wat Klanten Zeggen</h2>
     <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -65,7 +85,7 @@
 </section>
 
 <!-- Calendly Booking -->
- <section class="booking-section">
+ <section id="schedule" class="booking-section">
   <div class="container">
 <h2>Laten we een kort gesprek plannen om uw behoeften te begrijpen</h2>
 <section class="booking-section">
@@ -87,7 +107,7 @@
 
 
 <!-- Contactformulier -->
-<section class="contact-section">
+<section id="contact" class="contact-section">
   <div class="container">
     <h2>Neem Contact Op</h2>
     <form action="/submitted" method="POST" class="contact-form">
