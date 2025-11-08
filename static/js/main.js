@@ -33,3 +33,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Calendly widget is already embedded via HTML — no JS needed unless you want popup mode
 });
+
+function toggleMenu() {
+      const menu = document.getElementById('menu');
+      const icon = document.getElementById('menuIcon');
+      const nav_bar = document.getElementById('navbar');
+
+      menu.classList.toggle('show');
+      icon.classList.toggle('open');
+      nav_bar.classList.toggle('bg_change');
+    }
+
+
+document.querySelectorAll('.menu-overlay a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('menu').classList.remove('show');
+    document.getElementById('menuIcon').classList.remove('open');
+    document.getElementById('navbar').classList.remove('bg_change');
+  });
+});
