@@ -13,17 +13,40 @@
 <!-- Top Header Section -->
 <header class="top-header">
   <div class="container top-header-container">
+
+  <div class="navbar" id ="navbar" >
+    <div class="menu-icon" onclick="toggleMenu()" id="menuIcon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+ <div class="menu-overlay" id="menu">
+    <a href="#about">About Me</a>
+    <a href="#review">Review</a>
+    <a href="#schedule">Schdule a Call</a>
+    <a href="#contact">Contact Me</a>
+  </div>
+
     <div class="logo-box">
-      <img src="{{ url_for('static', filename='images/Logos/fire_logo.svg') }}" alt="Site Logo" class="top-logo">
+      <img src="{{ url_for('static', filename='images/Logos/fire_logo_name.png') }}" alt="Site Logo" class="top-logo">
     </div>
     <div class="language-toggle">
-      <a href="/?lang=en">🇬🇧 English</a> | <a href="/?lang=nl">🇳🇱 Nederlands</a>
+      <div class="language_english">
+        <a href="/?lang=en">🇬🇧 English</a>
+      </div>
+      <div class="language_Ducth">
+        <a href="/?lang=nl">🇳🇱 Nederlands</a>
+      </div>
+      
+      <!-- <a href="/?lang=en">🇬🇧 English</a> | <a href="/?lang=nl">🇳🇱 Nederlands</a>-->
     </div>
   </div>
 </header>
 
 <!-- Intro Section -->
-<section class="intro-section">
+<section id="about" class="intro-section">
   <div class="container intro-flex">
     <div class="photo-box">
       <img src="{{ url_for('static', filename='images/prawesh.jpeg') }}" alt="Your photo" class="profile-photo">
@@ -40,7 +63,7 @@ Whether it's a routine maintenance check, a malfunction, or a complete replaceme
 
 
 <!-- Testimonials -->
-<section class="testimonials-section">
+<section id="review" class="testimonials-section">
   <div class="container">
     <h2>What Clients Say</h2>
     <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -66,7 +89,7 @@ Whether it's a routine maintenance check, a malfunction, or a complete replaceme
 </section>
 
 <!-- Calendly Booking -->
-<section class="booking-section">
+<section id="schedule" class="booking-section">
   <div class="container">
 <h2>Let’s schedule a brief call to better understand your needs</h2>
 <!-- Calendly inline widget begin -->
@@ -88,7 +111,7 @@ Whether it's a routine maintenance check, a malfunction, or a complete replaceme
 
 
 <!-- Contact Form -->
-<section class="contact-section">
+<section id="contact" class="contact-section">
   <div class="container">
     <h2>Contact Me</h2>
     <form action="/submitted" method="POST" class="contact-form">
