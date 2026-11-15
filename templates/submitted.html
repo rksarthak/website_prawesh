@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Message Received</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
   <section class="confirmation-section">
     <div class="container">
-      <h2>Thanks, {{ name }}!</h2>
-      <p>We’ve received your message:</p>
-      <blockquote>{{ message }}</blockquote>
-      <p>We’ll reach out to you at <strong>{{ phone }}</strong> soon.</p>
-      <a href="/">← Back to Home</a>
+      <div class="confirmation-box">
+        <span class="eyebrow">Thank you</span>
+        <h2>Thanks, {{ name }}!</h2>
+        <p>We’ve received your message and will follow up shortly.</p>
+        <blockquote>{{ message }}</blockquote>
+        <p>We’ll reach out to you at <strong>{{ phone }}</strong> soon.</p>
+        <a href="/">← Back to Home</a>
+      </div>
     </div>
   </section>
 </body>
