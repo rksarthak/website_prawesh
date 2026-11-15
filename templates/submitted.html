@@ -1,23 +1,34 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Message Received</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-</head>
-<body>
-  <section class="confirmation-section">
-    <div class="container">
-      <div class="confirmation-box">
-        <span class="eyebrow">Thank you</span>
-        <h2>Thanks, {{ name }}!</h2>
-        <p>We’ve received your message and will follow up shortly.</p>
-        <blockquote>{{ message }}</blockquote>
-        <p>We’ll reach out to you at <strong>{{ phone }}</strong> soon.</p>
-        <a href="/">← Back to Home</a>
-      </div>
+{% extends "base.html" %}
+{% from "_icons.html" import icon %}
+
+{% block title %}{{ t.submitted.title }} | {{ business.name }}{% endblock %}
+{% block head %}<meta name="robots" content="noindex">{% endblock %}
+{% block nav %}{% endblock %}
+
+{% block content %}
+<section class="confirmation">
+  <div class="container">
+    <div class="card confirmation-card">
+      {% if contact.sent %}
+        <span class="confirmation-icon">{{ icon('check') }}</span>
+        <span class="eyebrow">{{ t.submitted.eyebrow }}</span>
+        <h1>{{ t.submitted.heading.format(name=contact.name) }}</h1>
+        <p class="lead">{{ t.submitted.text }}</p>
+        <p>{{ t.submitted.follow_up }} <strong>{{ contact.phone }}</strong>.</p>
+        <div class="confirmation-message">
+          <span>{{ t.submitted.your_message }}</span>
+          <blockquote>{{ contact.message }}</blockquote>
+        </div>
+      {% else %}
+        <span class="confirmation-icon is-error">{{ icon('alert') }}</span>
+        <h1>{{ t.submitted.error_heading }}</h1>
+        <p class="lead">{{ t.submitted.error_text }}</p>
+        {% if business.phone %}
+        <p><a class="contact-link" href="tel:{{ business.phone | replace(' ', '') }}">{{ icon('phone') }}{{ business.phone }}</a></p>
+        {% endif %}
+      {% endif %}
+      <a class="btn btn-secondary" href="{{ url_for('home', lang=lang) }}">{{ icon('arrow-left') }}{{ t.submitted.back }}</a>
     </div>
-  </section>
-</body>
-</html>
+  </div>
+</section>
+{% endblock %}
